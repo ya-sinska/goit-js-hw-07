@@ -35,16 +35,17 @@ function onGalleryClick(e) {
 // Модалка їз зображенням через бібліотеку basicLightbox 
   
   const instance = basicLightbox.create(`
-    <img src="${e.target.dataset.source}" class = "gggg" width="800" height="600">
+    <img src="${e.target.dataset.source}" width="800" height="600">
 `)
 
   instance.show(() => console.log('lightbox now visible'))
 
+// закрытие модального окна по нажатию клавиши Escape
+  
   document.addEventListener("keydown", event => {
     if (event.code === "Escape") {
     instance.close(() => console.log('lightbox not visible anymore'))
   }
-  
 });
 }
 
